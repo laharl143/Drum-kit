@@ -20,7 +20,7 @@ function handleClick() {
 ////////////////////////////////Dectecting Keyboard Press//////////////////////////////////////////////////
 document.addEventListener("keypress", function(event) {         // if a "keypress" was detected in the keyboard
 
-    makeSound(event.key);                                  // then i send the event.key, so the key property of the event. 
+    makeSound(event.key);                                  // then i send the event.key, it's the key property of the event. 
 
 });
 
