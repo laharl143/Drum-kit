@@ -13,7 +13,7 @@ function handleClick() {
 
     makeSound(buttonInnerHTML);                          // and send that to makeSound in order to make that relevant sound 
     
-    buttonAnimation(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);                    // this is added for the button animation for every button(mouse) press
 }
 }
 
@@ -23,7 +23,7 @@ document.addEventListener("keypress", function(event) {         // if a "keypres
 
     makeSound(event.key);                                  // then i send the event.key, so the key property of the event. 
 
-    buttonAnimation(event.key);
+    buttonAnimation(event.key);                            // this is added for the button animation for every keyboard press
 });
 
 function makeSound(key) {
@@ -59,7 +59,7 @@ function makeSound(key) {
         break;
 
         case "l":
-            var kick= new Audio("sounds/bass.mp3");
+            var kick= new Audio("sounds/bass2.mp3");
             kick.play();
         break;
         
@@ -72,13 +72,13 @@ function makeSound(key) {
 
 function buttonAnimation(currentKey) {
     
-    var activeButton = document.querySelector("." + currentKey);
+    var activeButton = document.querySelector("." + currentKey);    // ("." + currentKey) is used concatenation so we get the same format as the class with period. example ".a" or ".w"
 
-    activeButton.classList.add("pressed");
+    activeButton.classList.add("pressed");   //activeButton is the variable above to point the button pressed ; .classlist is used to point a class in html ; .add is used to add the pressed class found inside CSS to give it an animation.
 
-    setTimeout(function() {
-        activeButton.classList.remove("pressed");
-    }, 100);
+    setTimeout(function() {           
+        activeButton.classList.remove("pressed"); }, 100);  //this is used to remove the "pressed" animation above. ; and the 2nd paramater indicates 100 which is equivalent to 0.1second before it executes the code 
+    
 }
 
 
