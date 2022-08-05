@@ -13,6 +13,7 @@ function handleClick() {
 
     makeSound(buttonInnerHTML);                          // and send that to makeSound in order to make that relevant sound 
     
+    buttonAnimation(buttonInnerHTML);
 }
 }
 
@@ -20,8 +21,9 @@ function handleClick() {
 ////////////////////////////////Dectecting Keyboard Press//////////////////////////////////////////////////
 document.addEventListener("keypress", function(event) {         // if a "keypress" was detected in the keyboard
 
-    makeSound(event.key);                                  // then i send the event.key, it's the key property of the event. 
+    makeSound(event.key);                                  // then i send the event.key, so the key property of the event. 
 
+    buttonAnimation(event.key);
 });
 
 function makeSound(key) {
@@ -66,6 +68,17 @@ function makeSound(key) {
         
     }
 
+}
+
+function buttonAnimation(currentKey) {
+    
+    var activeButton = document.querySelector("." + currentKey);
+
+    activeButton.classList.add("pressed");
+
+    setTimeout(function() {
+        activeButton.classList.remove("pressed");
+    }, 100);
 }
 
 
